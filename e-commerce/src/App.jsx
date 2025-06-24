@@ -9,7 +9,7 @@ import Errorlink from './components/Errorlink'
 import ProductDetail from './subcomponents/ProductDetails'
 import { useState,useEffect } from 'react'
 import Admin from './components/Admin'
-
+import SignUp from './components/SignUp'
 
 function App() {
    const [products, setproducts] = useState([])
@@ -32,7 +32,9 @@ function App() {
             { path: 'Contact', element: <Contact /> },
             { path: 'Menu', element: <Menu products={products} /> },
             { path: 'product/:id', element: <ProductDetail /> },
-            { path: 'Admin', element: <Admin products={products} setproducts={setproducts} /> }
+            { path: 'Admin', element: <Admin products={products} setproducts={setproducts} /> },
+            { path: 'signup', element: <SignUp /> }
+
           ]
         },
         {
