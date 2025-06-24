@@ -9,3 +9,24 @@ const ProductDetail = () => {
   const handleBackToList = () => {
     navigate('/Menu')  
   }
+
+  if (!product) { 
+    return( 
+        <>
+            <p>Product not found.</p>
+        </>
+    )
+  }
+
+  return (
+    <div className='product-detail'>
+      <h1>{product.name}</h1>
+      <img src={product.image} alt={product.name} />
+      <p>Price: ${product.price}</p>
+      <p>{product.description || 'No description available.'}</p>
+      <button className="back-to-list-btn" onClick={handleBackToList}>Back to Product List</button>
+    </div>
+  )
+}
+
+export default ProductDetail
