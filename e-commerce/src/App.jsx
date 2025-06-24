@@ -1,34 +1,50 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react'
+import { createBrowserRouter,RouterProvider } from 'react-router-dom'
+import About from "./components/About"
+import Contact from "./components/Contact"
+import Home from "./components/Home"
+import Menu from "./components/Menu"
+import Layout from './components/Layout'
+import Errorlink from './components/Errorlink'
+import ProductDetail from './subcomponents/ProductDetails'
+import { useState,useEffect } from 'react'
+import Admin from './components/Admin'
+
 
 function App() {
-  const [count, setCount] = useState(0)
+   const [products, setproducts] = useState([])
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+   useEffect(() => {
+    fetch('https://taste-town-server.vercel.app/items')
+    .then(res => res.json())
+    .then(data => setproducts(data))
+  
+   }, [])
+   
+  
+      const router = createBrowserRouter([
+        {
+          path: '/',
+          element: <Layout />,
+          children: [
+            { index: true, element: <Home /> },
+            { path: 'About', element: <About /> },
+            { path: 'Contact', element: <Contact /> },
+            { path: 'Menu', element: <Menu products={products} /> },
+            { path: 'product/:id', element: <ProductDetail /> },
+            { path: 'Admin', element: <Admin products={products} setproducts={setproducts} /> }
+          ]
+        },
+        {
+          path: '*',
+          element: <Errorlink />
+        }
+      ])
+      
+
+    return (
+      <RouterProvider router={router}/>
+    
   )
 }
 
