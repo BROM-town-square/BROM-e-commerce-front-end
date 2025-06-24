@@ -21,7 +21,7 @@ const NavBar = () => {
         <div className='sidebtn'>
           <button className='userbtn' onClick={() => navigate('/Admin')}><FontAwesomeIcon icon={faUserGear} /></button>
           <button className='shopbag'><FontAwesomeIcon icon={faBagShopping} /></button>
-          <button className='signbtn'>Sign Up</button>
+          <button className='signbtn' onClick={() => navigate('/signup')}>Sign Up</button>
         </div>
         
     </div>
