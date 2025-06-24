@@ -1,7 +1,7 @@
 import React from 'react'
 import logo from '../assets/logo.png'
 import apples from '../assets/apples.png'
-import bussiness from '../assets/bussines.png'
+import business from '../assets/business.png'
 import transport from '../assets/transport.png'
 import money from '../assets/money.png'
 
