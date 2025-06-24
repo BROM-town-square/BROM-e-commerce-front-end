@@ -17,7 +17,7 @@ const About = () => {
       <img src={apples} alt="Apples image" />
       <p>We want you to know what's really great (and what's not). That's why we have a rating system to guide you to the best fruit, vegetables, and seafood. Our experts taste over 800 fresh products daily and rate them so you always know whats great right now. That's because we're committed to making sure your order is perfect and you're completely satisfied. So if something you receive is ever not up to your standards, let us know and we'll make it right—that's our 100% Happiness Guarantee.</p>
       <h1>Taste Town Business</h1>
-      <img src={bussiness} alt="Cakes image" className='imagetwo'/>
+      <img src={business} alt="Cakes image" className='imagetwo'/>
       <p>Since 2006, Taste Town has helped businesses fuel happy workdays. We offer a one-stop shop for stocking the workplace pantry, filling up on snacks and supplies, and ordering catering and beverages for meetings and gatherings. And with our dedicated corporate concierge team, we're always here to help you delight your team.</p>
       <div className='about-highlight'>
         <div>
