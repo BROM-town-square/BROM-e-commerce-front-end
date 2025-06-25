@@ -27,7 +27,7 @@ const AddProducts = ({ products }) => {
       price: parseFloat(formData.productPrice),
       category: formData.productCategory,
       description: formData.productDescription,
-      image: formData.productImage
+      image_url: formData.productImage
     };
 
     try {
