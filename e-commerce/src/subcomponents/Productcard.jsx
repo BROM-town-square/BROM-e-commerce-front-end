@@ -31,7 +31,7 @@ const Productcard = ({products,addToCart }) => {
         {products.map((product,id) => (
             <IndividualProduct 
             key={id}
-            image={product.image}
+            image={product.image_url}
             name={product.name}
             price={product.price}
             product={product}

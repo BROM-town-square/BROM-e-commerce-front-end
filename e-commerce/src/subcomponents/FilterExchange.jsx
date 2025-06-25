@@ -83,7 +83,7 @@ const FilterExchange = ({ products }) => {
             <div className="cart-items">
               {cartItems.map(item => (
                 <div key={item.id} className="cart-item">
-                  <img src={item.image} alt={item.name} />
+                  <img src={item.image_url} alt={item.name} />
                   <div className="item-details">
                     <h4>{item.name}</h4>
                     <p><strong>${(item.price * item.quantity).toFixed(2)}</strong></p>

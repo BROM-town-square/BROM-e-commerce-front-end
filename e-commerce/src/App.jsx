@@ -20,6 +20,7 @@ function App() {
     .then(data => setproducts(data))
   
    }, [])
+   console.log(products)
    
   
       const router = createBrowserRouter([
