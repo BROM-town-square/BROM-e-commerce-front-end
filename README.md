@@ -572,17 +572,6 @@ export default AddProducts;
 
 ---
 
-## **Future Improvement**
-
-- Integration with a backend server and a real database.
-- Implement user authentication for personalized experiences.
-- Enhance the UI/UX for a more modern look.
-- Implement Admin authentication for secure control of site.
-- Implement **edit functionality** for products in the admin panel.
-- Automatic update of UI without page manual refresh.
-
----
-
 ## **Authors**
 
 ---
