@@ -31,7 +31,7 @@ const AddProducts = ({ products }) => {
     };
 
     try {
-      const res = await fetch('/api/food', {
+      const res = await fetch('https://brom-e-commerce-backend.onrender.com/api/food', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

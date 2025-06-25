@@ -13,7 +13,7 @@ const Logout = () => {
     }
 
     try {
-      const res = await fetch('/api/auth/logout', {
+      const res = await fetch('https://brom-e-commerce-backend.onrender.com/api/auth/logout', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -21,7 +21,9 @@ const Logout = () => {
         },
       });
 
-      const data = await res.json();
+      const isJson = res.headers.get('content-type')?.includes('application/json');
+      const data = isJson ? await res.json() : null;
+
       console.log("Logout response:", data);
 
       if (!res.ok) {

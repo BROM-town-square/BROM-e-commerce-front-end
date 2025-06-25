@@ -10,7 +10,7 @@ const DeleteProducts = ({ products, setproducts, setEditingProduct }) => {
     try {
       setDeletingId(id);
 
-      const res = await fetch(`/api/food/${id}`, {
+      const res = await fetch(`https://brom-e-commerce-backend.onrender.com/api/food/${id}`, {
         method: 'DELETE',
       });
 

@@ -15,7 +15,7 @@ function App() {
    const [products, setproducts] = useState([])
 
    useEffect(() => {
-    fetch('/api/food')
+    fetch('https://brom-e-commerce-backend.onrender.com/api/food')
     .then(res => res.json())
     .then(data => setproducts(data))
   

@@ -29,7 +29,7 @@ const AdminAuth = () => {
     e.preventDefault();
     if (!validateInputs()) return;
 
-    const endpoint = isRegister ? '/api/auth/admin/register' : '/api/auth/admin/login';
+    const endpoint = isRegister ? 'https://brom-e-commerce-backend.onrender.com/api/auth/admin/register' : 'https://brom-e-commerce-backend.onrender.com/api/auth/admin/login';
 
     try {
       const res = await fetch(endpoint, {
