@@ -1,5 +1,5 @@
 import React from 'react'
-import { createBrowserRouter,RouterProvider } from 'react-router-dom'
+import { createBrowserRouter,RouterProvider, Navigate } from 'react-router-dom'
 import About from "./components/About"
 import Contact from "./components/Contact"
 import Home from "./components/Home"
@@ -10,6 +10,7 @@ import ProductDetail from './subcomponents/ProductDetails'
 import { useState,useEffect } from 'react'
 import Admin from './components/Admin'
 import SignUp from './components/SignUp'
+import AdminAuth from './components/AdminAuth'
 
 function App() {
    const [products, setproducts] = useState([])
@@ -20,7 +21,6 @@ function App() {
     .then(data => setproducts(data))
   
    }, [])
-   console.log(products)
    
   
       const router = createBrowserRouter([
@@ -33,7 +33,8 @@ function App() {
             { path: 'Contact', element: <Contact /> },
             { path: 'Menu', element: <Menu products={products} /> },
             { path: 'product/:id', element: <ProductDetail /> },
-            { path: 'Admin', element: <Admin products={products} setproducts={setproducts} /> },
+            { path: 'admin-auth', element: <AdminAuth />},
+            { path: 'Admin', element: localStorage.getItem('adminToken') ? <Admin products={products} setproducts={setproducts} /> : <Navigate to="/admin-auth" />},
             { path: 'signup', element: <SignUp /> }
 
           ]

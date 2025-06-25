@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://brom-e-commerce-backend.onrender.com/',
+        target: 'https://brom-e-commerce-backend.onrender.com',
         changeOrigin: true,
       },
     },

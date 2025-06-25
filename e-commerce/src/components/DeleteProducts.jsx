@@ -1,29 +1,38 @@
-import React from 'react'
+import React, { useState } from 'react';
 
-const DeleteProducts = ({products,setproducts}) => {
+const DeleteProducts = ({ products, setproducts }) => {
+  const [deletingId, setDeletingId] = useState(null);
 
   async function handleDelete(id) {
+    const confirmDelete = window.confirm("Are you sure you want to delete this product?");
+    if (!confirmDelete) return;
+
     try {
-      const res = await fetch(`https://taste-town-server.vercel.app/items/${id}`, {
-        method: 'DELETE',
+      setDeletingId(id);
+
+      const res = await fetch(`/api/food/${id}`, {
+        method: 'DELETE'
+        // No Authorization header needed now
       });
-  
+
       if (!res.ok) {
-        throw new Error('Failed to delete from server');
+        const err = await res.json();
+        throw new Error(err.error || 'Failed to delete from server');
       }
-  
+
       const filtered = products.filter(product => String(product.id) !== String(id));
       setproducts(filtered);
-       
     } catch (err) {
       console.error('Error deleting product:', err);
+      alert('Delete failed: ' + err.message);
+    } finally {
+      setDeletingId(null);
     }
   }
-  
 
   return (
     <div className="admin-panel">
-      <h2 className="admin-title">DELETE </h2>
+      <h2 className="admin-title">Delete Products</h2>
       {products.length === 0 ? (
         <p className="no-products">No products available.</p>
       ) : (
@@ -41,11 +50,12 @@ const DeleteProducts = ({products,setproducts}) => {
                 <td>{product.id}</td>
                 <td>{product.name}</td>
                 <td>
-                  <button 
-                    className="delete-button" 
+                  <button
+                    className="delete-button"
                     onClick={() => handleDelete(product.id)}
+                    disabled={deletingId === product.id}
                   >
-                    🗑️ Delete
+                    {deletingId === product.id ? 'Deleting...' : '🗑️ Delete'}
                   </button>
                 </td>
               </tr>
@@ -54,8 +64,7 @@ const DeleteProducts = ({products,setproducts}) => {
         </table>
       )}
     </div>
-  
-  )
-}
+  );
+};
 
-export default DeleteProducts
+export default DeleteProducts;
