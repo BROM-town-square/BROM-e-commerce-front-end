@@ -574,6 +574,16 @@ export default AddProducts;
 
 ## **Authors**
 
+**Front End**
+
+- Brian Njuguna - [https://github.com/NJUGUNA-png]
+- Joy Mitchel - [https://github.com/JoyMitchel]
+
+**Back End**
+
+- Ricahrd Wasonga - [https://github.com/Richard3wasonga]
+- Nevil Oporo - [https://github.com/Neviloporo]
+
 ---
 
 ## **License**
