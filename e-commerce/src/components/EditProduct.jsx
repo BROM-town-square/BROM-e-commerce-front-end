@@ -6,7 +6,7 @@ const EditProduct = ({ editingProduct, setEditingProduct, setproducts }) => {
     price: '',
     category: '',
     description: '',
-    image: ''
+    image_url: ''
   });
 
   useEffect(() => {
@@ -16,12 +16,12 @@ const EditProduct = ({ editingProduct, setEditingProduct, setproducts }) => {
         price: editingProduct.price || '',
         category: editingProduct.category || '',
         description: editingProduct.description || '',
-        image: editingProduct.image || ''
+        image_url: editingProduct.image_url || ''
       });
     }
   }, [editingProduct]);
 
-  if (!editingProduct) return null; // <-- Prevent rendering if undefined
+  if (!editingProduct) return null;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -30,11 +30,19 @@ const EditProduct = ({ editingProduct, setEditingProduct, setproducts }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const updatedData = {
+      ...formData,
+      price: parseFloat(formData.price)
+    };
+
     try {
       const res = await fetch(`/api/food/${editingProduct.id}`, {
         method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(updatedData)
       });
 
       const data = await res.json();
@@ -54,11 +62,41 @@ const EditProduct = ({ editingProduct, setEditingProduct, setproducts }) => {
     <div className="edit-form">
       <h3>Edit Product</h3>
       <form onSubmit={handleSubmit}>
-        <input name="name" value={formData.name} onChange={handleChange} placeholder="Name" />
-        <input name="price" value={formData.price} onChange={handleChange} placeholder="Price" />
-        <input name="category" value={formData.category} onChange={handleChange} placeholder="Category" />
-        <input name="description" value={formData.description} onChange={handleChange} placeholder="Description" />
-        <input name="image" value={formData.image} onChange={handleChange} placeholder="Image URL" />
+        <input
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+          placeholder="Name"
+          required
+        />
+        <input
+          name="price"
+          type="number"
+          step="0.01"
+          value={formData.price}
+          onChange={handleChange}
+          placeholder="Price"
+          required
+        />
+        <input
+          name="category"
+          value={formData.category}
+          onChange={handleChange}
+          placeholder="Category"
+        />
+        <textarea
+          name="description"
+          value={formData.description}
+          onChange={handleChange}
+          placeholder="Description"
+        />
+        <input
+          name="image_url"
+          type="url"
+          value={formData.image_url}
+          onChange={handleChange}
+          placeholder="Image URL"
+        />
         <button type="submit">Save</button>
         <button type="button" onClick={() => setEditingProduct(null)}>Cancel</button>
       </form>

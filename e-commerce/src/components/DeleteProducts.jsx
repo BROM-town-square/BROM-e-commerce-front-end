@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const DeleteProducts = ({ products, setproducts }) => {
+const DeleteProducts = ({ products, setproducts, setEditingProduct }) => {
   const [deletingId, setDeletingId] = useState(null);
 
   async function handleDelete(id) {
@@ -11,8 +11,7 @@ const DeleteProducts = ({ products, setproducts }) => {
       setDeletingId(id);
 
       const res = await fetch(`/api/food/${id}`, {
-        method: 'DELETE'
-        // No Authorization header needed now
+        method: 'DELETE',
       });
 
       if (!res.ok) {
@@ -32,7 +31,7 @@ const DeleteProducts = ({ products, setproducts }) => {
 
   return (
     <div className="admin-panel">
-      <h2 className="admin-title">Delete Products</h2>
+      <h2 className="admin-title">Manage Products</h2>
       {products.length === 0 ? (
         <p className="no-products">No products available.</p>
       ) : (
@@ -41,7 +40,7 @@ const DeleteProducts = ({ products, setproducts }) => {
             <tr>
               <th>ID</th>
               <th>Name</th>
-              <th>Action</th>
+              <th colSpan="2">Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -49,6 +48,14 @@ const DeleteProducts = ({ products, setproducts }) => {
               <tr key={product.id}>
                 <td>{product.id}</td>
                 <td>{product.name}</td>
+                <td>
+                  <button
+                    className="edit-button"
+                    onClick={() => setEditingProduct(product)}
+                  >
+                    ✏️ Edit
+                  </button>
+                </td>
                 <td>
                   <button
                     className="delete-button"
