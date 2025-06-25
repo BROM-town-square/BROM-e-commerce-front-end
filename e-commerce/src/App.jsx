@@ -9,7 +9,6 @@ import Errorlink from './components/Errorlink'
 import ProductDetail from './subcomponents/ProductDetails'
 import { useState,useEffect } from 'react'
 import Admin from './components/Admin'
-import SignUp from './components/SignUp'
 import AdminAuth from './components/AdminAuth'
 
 function App() {
@@ -35,7 +34,7 @@ function App() {
             { path: 'product/:id', element: <ProductDetail /> },
             { path: 'admin-auth', element: <AdminAuth />},
             { path: 'Admin', element: localStorage.getItem('adminToken') ? <Admin products={products} setproducts={setproducts} /> : <Navigate to="/admin-auth" />},
-            { path: 'signup', element: <SignUp /> }
+           
 
           ]
         },
