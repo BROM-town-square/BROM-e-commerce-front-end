@@ -15,7 +15,7 @@ function App() {
    const [products, setproducts] = useState([])
 
    useEffect(() => {
-    fetch('https://taste-town-server.vercel.app/items')
+    fetch('/api/food')
     .then(res => res.json())
     .then(data => setproducts(data))
   
