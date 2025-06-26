@@ -7,7 +7,7 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
 ![JWT](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=JSON%20web%20tokens&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![Render](https://img.shields.io/badge/Deployed%20on-Render-00979D?style=for-the-badge&logo=render&logoColor=white)
 
 
@@ -27,6 +27,11 @@
 - Orders page with Order History of specific User
 - JWT Token storage and Refresh Handling
 
+## **Live Demo & setup**
+
+**Live site:** [Live Link](https://brom-e-commerce-front-end.onrender.com/)
+
+**Repository:** [Taste Town](https://github.com/BROM-town-square)
 
 ## **Setup & Installation**
 
@@ -38,10 +43,6 @@
 
 
 ## **Installation**
-
-Access the live application here: [Live Link](https://brom-e-commerce-front-end.onrender.com/)
-
-GitHub Repository: [Taste Town](https://github.com/BROM-town-square)
 
 1. Clone this repository:
    ```bash
@@ -65,7 +66,7 @@ GitHub Repository: [Taste Town](https://github.com/BROM-town-square)
 4. Start development server:
    ```bash
 
-   npm run devdev
+   npm run dev
 
    ```
 
@@ -101,6 +102,8 @@ GitHub Repository: [Taste Town](https://github.com/BROM-town-square)
 
 ## **User Interface Overview**
 
+>Access via **user circle icon** on the navbar.
+
 ### **Navigation Bar**
 
 - Adapts based on user role: Guest, User or Admin
@@ -116,7 +119,7 @@ GitHub Repository: [Taste Town](https://github.com/BROM-town-square)
 
 - View, update and remove items
 - Quantity controls and total calculation
-- Place order trriggers an order to be made of the current items in cart
+- Place order triggers an order to be made of the current items in cart
 
 ### **Order Page**
 
@@ -146,7 +149,7 @@ GitHub Repository: [Taste Town](https://github.com/BROM-town-square)
 
 ## **Admin Dashboard Overview**
 
-Access via gear icon in the navbar (visible after admin login).
+>Access via **gear icon** in the navbar.
 
 ### **`AddProducts.jsx**
 
@@ -179,20 +182,20 @@ Access via gear icon in the navbar (visible after admin login).
 - Includes **Token Refresh Logic** to keep sessions alive
 - Dynamic Navbar changes based on login state
 - Separate login UIs for:
-   - **Ussrs**: Access to Home, menu, cart, orders
+   - **Users**: Access to Home, menu, cart, orders
    - **Admins**: Acess to Admin Dashbord
 
 
 ## **Tech Stack**
 
-| Category      | Technology                       |
-|---------------|----------------------------------|
-| **Frontend**  | React, Vite, React Router        |
-| **Backend**   | Flask (API), Flask-JWT           |
-| **Authentication** | JWT (Access + Refresh Tokens) |
-| **Styling**   | CSS3, Flexbox                    |
-| **Build Tool**| Vite                             |
-| **Deployment**| Render                           |
+| Category          | Technology                       |
+|-------------------|----------------------------------|
+| **Frontend**      | React, Vite, React Router        |
+| **Backend**       | Flask (API), Flask-JWT           |
+| **Authentication**| JWT (Access + Refresh Tokens)    |
+| **Styling**       | CSS (Flexbox, custom styles)     |
+| **Build Tool**    | Vite                             |
+| **Deployment**    | Render                           |
 
 
 ---
