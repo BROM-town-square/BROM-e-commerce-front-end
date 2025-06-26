@@ -202,11 +202,11 @@
 
 ## **Authors**
 
-- Ricahrd Wasonga - [https://github.com/Richard3wasonga]
+- [Ricahrd Wasonga](https://github.com/Richard3wasonga)
 
-- Brian Njuguna - [https://github.com/NJUGUNA-png]
+- [Brian Njuguna](https://github.com/NJUGUNA-png)
 
-- Joy Mitchel - [https://github.com/JoyMitchel]
+- [Joy Mitchel](https://github.com/JoyMitchel)
 
 
 ## **Contributing**
