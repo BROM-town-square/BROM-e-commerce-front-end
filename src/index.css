@@ -1111,6 +1111,61 @@ form button:hover {
 }
 
 
+.user-table {
+  max-width: 100%;
+  margin: 40px auto;
+  padding: 25px 20px;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  font-family: 'Poppins', sans-serif;
+}
+
+.user-table h2 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.user-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.user-table th,
+.user-table td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.user-table th {
+  background-color: #f7f7f7;
+  color: #444;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.user-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+.user-table td {
+  color: #333;
+}
+
+.user-table .error-message {
+  text-align: center;
+  color: #dc3545;
+  font-weight: 600;
+  margin-top: 10px;
+  font-size: 15px;
+}
+
 
 
 @media (min-width: 768px) {

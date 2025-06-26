@@ -3,6 +3,7 @@ import AddProducts from './AddProducts'
 import DeleteProducts from './DeleteProducts'
 import EditProduct from './EditProduct'
 import Logout from './Logout'
+import AllUsers from './AllUsers'
 
 const Admin = ({ products, setproducts }) => {
   const [editingProduct, setEditingProduct] = useState(null); 
@@ -21,6 +22,7 @@ const Admin = ({ products, setproducts }) => {
         setproducts={setproducts}
         setEditingProduct={setEditingProduct} 
       />
+      <AllUsers />
     </div>
   );
 };
