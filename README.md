@@ -1,6 +1,16 @@
 
 # **Taste Town Frontend**
 
+
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=FFD62E)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
+![JWT](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=JSON%20web%20tokens&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![Render](https://img.shields.io/badge/Deployed%20on-Render-00979D?style=for-the-badge&logo=render&logoColor=white)
+
+
 >A responsive, dynamic React frontend for Taste Town, a fictional food ordering platform. Built with Vite and React, this UI integrates seamlessly with the Flask backend and supports both user and admin experiences.
 
 ---
@@ -89,6 +99,29 @@ GitHub Repository: [Taste Town](https://github.com/BROM-town-square)
 
 ---
 
+## **User Interface Overview**
+
+### **Navigation Bar**
+
+- Adapts based on user role: Guest, User or Admin
+- Mobile-friendly toggle menu on small screens
+
+### **Menu & Product Pages**
+
+- Sidebar filter for category selection
+- Product cards with Add to cart button
+- Product Detail view includes image, name, price and description
+
+### **Shopping Cart**
+
+- View, update and remove items
+- Quantity controls and total calculation
+- Place order trriggers an order to be made of the current items in cart
+
+### **Order Page**
+
+- Displays logged-in user's past orders
+
 ## **Core Components**
 
 
@@ -148,6 +181,19 @@ Access via gear icon in the navbar (visible after admin login).
 - Separate login UIs for:
    - **Ussrs**: Access to Home, menu, cart, orders
    - **Admins**: Acess to Admin Dashbord
+
+
+## **Tech Stack**
+
+| Category      | Technology                       |
+|---------------|----------------------------------|
+| **Frontend**  | React, Vite, React Router        |
+| **Backend**   | Flask (API), Flask-JWT           |
+| **Authentication** | JWT (Access + Refresh Tokens) |
+| **Styling**   | CSS3, Flexbox                    |
+| **Build Tool**| Vite                             |
+| **Deployment**| Render                           |
+
 
 ---
 
