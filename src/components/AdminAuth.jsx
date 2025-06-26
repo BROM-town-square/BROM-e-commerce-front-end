@@ -5,11 +5,14 @@ const AdminAuth = () => {
   const [isRegister, setIsRegister] = useState(false);
   const [formData, setFormData] = useState({ username: '', email: '', password: '' });
   const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const toggleMode = () => {
     setIsRegister(prev => !prev);
     setError('');
+    setSuccess('');
   };
 
   const handleChange = e => {
@@ -29,7 +32,13 @@ const AdminAuth = () => {
     e.preventDefault();
     if (!validateInputs()) return;
 
-    const endpoint = isRegister ? 'https://brom-e-commerce-backend.onrender.com/api/auth/admin/register' : 'https://brom-e-commerce-backend.onrender.com/api/auth/admin/login';
+    setLoading(true);
+    setError('');
+    setSuccess('');
+
+    const endpoint = isRegister
+      ? 'https://brom-e-commerce-backend.onrender.com/api/auth/admin/register'
+      : 'https://brom-e-commerce-backend.onrender.com/api/auth/admin/login';
 
     try {
       const res = await fetch(endpoint, {
@@ -39,6 +48,7 @@ const AdminAuth = () => {
       });
 
       const data = await res.json();
+      setLoading(false);
 
       if (!res.ok) {
         setError(data.error || 'Something went wrong');
@@ -47,12 +57,16 @@ const AdminAuth = () => {
 
       if (!isRegister) {
         localStorage.setItem('adminToken', data.access_token);
-        navigate('/Admin');
+        localStorage.setItem('userRole', 'admin');
+        setSuccess('Login successful! Redirecting...');
+        setTimeout(() => navigate('/Admin'), 1500);
       } else {
-        setError('Registration successful! You can now log in.');
+        setSuccess('Registration successful! You can now log in.');
         setIsRegister(false);
+        setFormData({ username: '', email: '', password: '' });
       }
     } catch (err) {
+      setLoading(false);
       setError('Failed to connect to server');
     }
   };
@@ -60,6 +74,7 @@ const AdminAuth = () => {
   return (
     <div className="admin-auth">
       <h2>{isRegister ? 'Admin Register' : 'Admin Login'}</h2>
+
       <form className="auth-form" onSubmit={handleSubmit}>
         <input
           type="text"
@@ -84,11 +99,15 @@ const AdminAuth = () => {
           value={formData.password}
           onChange={handleChange}
         />
-        {error && <p className="auth-error">{error}</p>}
-        <button type="submit" className="auth-button">
-          {isRegister ? 'Register' : 'Login'}
+
+        {error && <p className="auth-error" style={{ color: 'red' }}>{error}</p>}
+        {success && <p className="auth-success" style={{ color: 'green' }}>{success}</p>}
+
+        <button type="submit" className="auth-button" disabled={loading}>
+          {loading ? 'Please wait...' : isRegister ? 'Register' : 'Login'}
         </button>
       </form>
+
       <p className="auth-toggle">
         {isRegister ? 'Already have an account?' : "Don't have an account?"}{' '}
         <button className="auth-switch" onClick={toggleMode}>
