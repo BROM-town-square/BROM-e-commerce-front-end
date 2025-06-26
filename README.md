@@ -28,7 +28,7 @@ GitHub Repository: [Taste Town](https://github.com/BROM-town-square)
 
 5. Run the project on browser
    ```bash
-   npm run dev
+   npm run devdev
    ```
 
 ---
