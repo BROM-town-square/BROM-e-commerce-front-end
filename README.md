@@ -185,6 +185,19 @@
    - **Users**: Access to Home, menu, cart, orders
    - **Admins**: Acess to Admin Dashbord
 
+###  **Application Flow Overview**
+
+```mermaid
+graph TD
+  Guest -->|Login| User
+  Guest -->|Admin Login| Admin
+  User --> Menu --> Product --> Cart --> Order
+  Admin --> Dashboard --> ManageProducts & ViewUsers
+
+```
+
+---
+
 
 ## **Tech Stack**
 
@@ -196,6 +209,22 @@
 | **Styling**       | CSS (Flexbox, custom styles)     |
 | **Build Tool**    | Vite                             |
 | **Deployment**    | Render                           |
+
+
+## **Why These Tools?**
+
+- **React + Vite**: Fast bundling and hot reloading for smooth development.
+- **CSS (No framework)**: Gives full control over styles.
+- **React Router**: Declarative route management.
+- **JWT Auth**: Secure and stateless authentication.
+
+### **Responsive Design**
+
+Taste Town is fully responsive — optimized for mobile, tablet, and desktop screens.
+
+| Laptop                         | Tablet                        | Mobile                        |
+|--------------------------------|-------------------------------|-------------------------------|
+| ![](./screenshots/laptop.png)  | ![](./screenshots/tablet.png) | ![](./screenshots/mobile.png) |
 
 
 ---
