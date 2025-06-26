@@ -7,11 +7,21 @@ const DeleteProducts = ({ products, setproducts, setEditingProduct }) => {
     const confirmDelete = window.confirm("Are you sure you want to delete this product?");
     if (!confirmDelete) return;
 
+    const token = localStorage.getItem("adminToken");
+
+    if (!token) {
+      alert("Unauthorized. Admin token missing.");
+      return;
+    }
+
     try {
       setDeletingId(id);
 
       const res = await fetch(`https://brom-e-commerce-backend.onrender.com/api/food/${id}`, {
         method: 'DELETE',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+        },
       });
 
       if (!res.ok) {

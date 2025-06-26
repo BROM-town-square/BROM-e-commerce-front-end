@@ -31,6 +31,13 @@ const EditProduct = ({ editingProduct, setEditingProduct, setproducts }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const token = localStorage.getItem("adminToken");
+
+    if (!token) {
+      alert("Unauthorized. Admin token missing.");
+      return;
+    }
+
     const updatedData = {
       ...formData,
       price: parseFloat(formData.price)
@@ -40,7 +47,8 @@ const EditProduct = ({ editingProduct, setEditingProduct, setproducts }) => {
       const res = await fetch(`https://brom-e-commerce-backend.onrender.com/api/food/${editingProduct.id}`, {
         method: 'PATCH',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
         },
         body: JSON.stringify(updatedData)
       });

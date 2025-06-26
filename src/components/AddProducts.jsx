@@ -17,6 +17,12 @@ const AddProducts = ({ products }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const token = localStorage.getItem("adminToken");
+    if (!token) {
+      alert("Unauthorized. Admin token missing.");
+      return;
+    }
+
     if (formData.productPrice <= 0) {
       alert('Product price must be a positive number.');
       return;
@@ -34,8 +40,8 @@ const AddProducts = ({ products }) => {
       const res = await fetch('https://brom-e-commerce-backend.onrender.com/api/food', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
-          // No Authorization header needed
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
         },
         body: JSON.stringify(productData)
       });
