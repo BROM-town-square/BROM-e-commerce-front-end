@@ -667,35 +667,3 @@ Pull requests are welcome! For major changes, please open an issue first to disc
 
 This project is open-source and available under the MIT License.
 
-     <button type="submit">Add Product</button>
-      </form>
-    </div>
-  );
-};
-
-export default AddProducts;
-```
-
----
-
----
-
-## **Authors**
-
-- Ricahrd Wasonga - [https://github.com/Richard3wasonga]
-
-- Brian Njuguna - [https://github.com/NJUGUNA-png]
-
-- Joy Mitchel - [https://github.com/JoyMitchel]
-
-
-## **Contributing**
-
-Pull requests are welcome! For major changes, please open an issue first to discuss your ideas.
-
----
-
-## **License**
-
-This project is open-source and available under the MIT License.
-
