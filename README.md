@@ -220,7 +220,7 @@ graph TD
 
 ### **Responsive Design**
 
-Taste Town is fully responsive — optimized for mobile, tablet, and desktop screens.
+Taste Town is fully responsive — optimized for mobile, tablet, and Laptop screens.
 
 | Laptop                         | Tablet                        | Mobile                        |
 |--------------------------------|-------------------------------|-------------------------------|
