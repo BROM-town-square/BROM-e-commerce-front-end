@@ -151,7 +151,7 @@
 
 >Access via **gear icon** in the navbar.
 
-### **`AddProducts.jsx**
+### **`AddProducts.jsx`**
 
 - Controlled form to add new food items
 - Includes fields for name, price, category, description, image URL
