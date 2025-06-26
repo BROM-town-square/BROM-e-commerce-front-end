@@ -979,6 +979,137 @@ form button:hover {
   transform: scale(0.97);
 }
 
+.profilebtn {
+  background-color: transparent;
+  border: 2px solid #4CAF50;
+  color: #4CAF50;
+  border-radius: 50%;
+  padding: 8px;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.profilebtn:hover {
+  background-color: #e6f4ea;
+  transform: scale(1.05);
+}
+
+
+
+.profile-page {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 24px;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+  font-family: 'Poppins', sans-serif;
+}
+
+.profile-page h2 {
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.profile-page h3 {
+  font-size: 1.3rem;
+  margin: 24px 0 12px;
+  color: #444;
+}
+
+
+.profile-page label {
+  display: block;
+  margin-bottom: 16px;
+  font-weight: 500;
+  color: #222;
+}
+
+.profile-page input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-top: 6px;
+  transition: border-color 0.2s ease;
+}
+
+.profile-page input:focus {
+  outline: none;
+  border-color: #ff4d4d;
+  box-shadow: 0 0 0 2px rgba(255, 77, 77, 0.2);
+}
+
+
+.update-button,
+.password-button,
+.delete-button {
+  display: inline-block;
+  padding: 10px 16px;
+  margin-top: 12px;
+  font-weight: 500;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.update-button {
+  background-color: #007bff;
+  color: #fff;
+  margin-right: 10px;
+}
+
+.update-button:hover {
+  background-color: #0066d1;
+}
+
+.password-button {
+  background-color: #28a745;
+  color: #fff;
+  margin-right: 10px;
+}
+
+.password-button:hover {
+  background-color: #218838;
+}
+
+.delete-button {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}
+
+.profile-page hr {
+  margin: 30px 0;
+  border: none;
+  border-top: 1px solid #eee;
+}
+
+.error-message {
+  color: #dc3545;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.success-message {
+  color: #28a745;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
 
 
 

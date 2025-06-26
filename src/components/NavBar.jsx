@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import logo from '../assets/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBagShopping, faUserGear } from '@fortawesome/free-solid-svg-icons';
+import { faBagShopping, faUserGear, faUserCircle  } from '@fortawesome/free-solid-svg-icons';
 
 const NavBar = () => {
   const navigate = useNavigate();
@@ -28,6 +28,9 @@ const NavBar = () => {
         </button>
         <button className='shopbag'>
           <FontAwesomeIcon icon={faBagShopping} />
+        </button>
+        <button className='profilebtn' onClick={() => navigate(isAuthenticated ? '/profile' : '/user-auth')}>
+          <FontAwesomeIcon icon={faUserCircle} />
         </button>
         {isAuthenticated ? (
           <button className='signbtn' onClick={handleLogout}>Logout</button>
