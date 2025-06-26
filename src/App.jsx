@@ -12,7 +12,9 @@ import Errorlink from './components/Errorlink';
 import AuthRequired from './components/AuthRequired';
 import ProtectedRoute from './components/ProtectedRoute';
 import UserAuth from './components/UserAuth';
-import UserProfile from './components/UserProfile'; 
+import UserProfile from './components/UserProfile';
+import OrdersPage from './components/OrdersPage';
+
 
 function App() {
   const [products, setproducts] = useState([]);
@@ -33,6 +35,8 @@ function App() {
         { path: 'Contact', element: <Contact /> },
         { path: 'Menu', element: <ProtectedRoute><Menu products={products} /></ProtectedRoute> },
         { path: 'product/:id', element: <ProtectedRoute><ProductDetail /></ProtectedRoute> },
+        { path: 'orders', element: <ProtectedRoute><OrdersPage /></ProtectedRoute> },
+
 
         
         {

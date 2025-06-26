@@ -1167,6 +1167,112 @@ form button:hover {
 }
 
 
+.orders-page-container {
+  background: linear-gradient(to bottom, #eaf2e0, #ffffff);
+  min-height: 100vh;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: 'Poppins', sans-serif;
+}
+
+.orders-page-wrapper {
+  background-color: #ffffff;
+  max-width: 800px;
+  width: 100%;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.05);
+  border: 2px solid #cfe3c6;
+}
+
+.orders-heading {
+  font-size: 28px;
+  font-weight: 700;
+  color: #3c3c3c;
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.orders-heading::after {
+  content: '';
+  width: 80px;
+  height: 4px;
+  background-color: #4CAF50;
+  display: block;
+  margin: 12px auto 0;
+  border-radius: 4px;
+}
+
+.orders-loading,
+.orders-empty {
+  text-align: center;
+  font-size: 16px;
+  color: #999;
+  padding: 20px 0;
+}
+
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.order-card {
+  background-color: #f8fff3;
+  border: 2px solid #d4ebc6;
+  border-radius: 12px;
+  padding: 20px 25px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.07);
+}
+
+.order-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.1);
+}
+
+.order-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #388e3c;
+  margin-bottom: 15px;
+}
+
+.order-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px dashed #cce4bc;
+  font-size: 15px;
+  color: #444;
+}
+
+.order-item:last-child {
+  border-bottom: none;
+}
+
+.order-qty {
+  font-weight: 600;
+  color: #666;
+}
+
+.order-empty {
+  font-style: italic;
+  color: #999;
+  font-size: 14px;
+}
+
+
+
 
 @media (min-width: 768px) {
   .navbar {

@@ -26,7 +26,7 @@ const NavBar = () => {
         <button className='userbtn' onClick={() => navigate('/Admin')}>
           <FontAwesomeIcon icon={faUserGear} />
         </button>
-        <button className='shopbag'>
+        <button className='shopbag' onClick={() => navigate('/orders')}>
           <FontAwesomeIcon icon={faBagShopping} />
         </button>
         <button className='profilebtn' onClick={() => navigate(isAuthenticated ? '/profile' : '/user-auth')}>

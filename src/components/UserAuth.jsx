@@ -13,6 +13,32 @@ const UserAuth = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const refreshAccessToken = async () => {
+    const refreshToken = localStorage.getItem('refreshToken');
+    if (!refreshToken) return null;
+
+    try {
+      const res = await fetch('https://brom-e-commerce-backend.onrender.com/api/auth/refresh', {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${refreshToken}`
+        }
+      });
+
+      if (!res.ok) {
+        console.warn('Refresh token failed.');
+        return null;
+      }
+
+      const data = await res.json();
+      localStorage.setItem('userToken', data.access_token);
+      return data.access_token;
+    } catch (err) {
+      console.error('Error refreshing token:', err);
+      return null;
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const endpoint = isLogin ? 'login' : 'register';
@@ -38,8 +64,16 @@ const UserAuth = () => {
 
       if (isLogin) {
         localStorage.setItem('userToken', data.access_token);
+        localStorage.setItem('refreshToken', data.refresh_token);
         localStorage.setItem('userRole', 'user');
         alert('Login successful!');
+
+        
+        const freshAccessToken = await refreshAccessToken();
+        if (freshAccessToken) {
+          console.log('Access token refreshed successfully');
+        }
+
         window.location.href = '/menu'; 
       } else {
         alert('Registration successful! You can now log in.');
