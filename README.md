@@ -8,7 +8,7 @@ This project is an online e-commerce suprmarket built with React. It allows user
 
 ## **Installation**
 
-Access the live application here: [Live Link]()
+Access the live application here: [Live Link](https://brom-e-commerce-front-end.onrender.com/)
 
 GitHub Repository: [Taste Town](https://github.com/BROM-town-square)
 
@@ -567,7 +567,7 @@ export default AddProducts;
 
 ### **Backend (API)**
 
-- **Node.js (hosted on Vercel)** – RESTful API for product data
+- **Node.js (hosted on Render)** – RESTful API for product data
 - **API Endpoint** – [`https://taste-town-five.vercel.app/items`](https://taste-town-five.vercel.app/items)
 
 ---
