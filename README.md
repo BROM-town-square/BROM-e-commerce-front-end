@@ -10,6 +10,10 @@
 ![CSS](https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![Render](https://img.shields.io/badge/Deployed%20on-Render-00979D?style=for-the-badge&logo=render&logoColor=white)
 
+<p align="center">
+  <img src="src/assets/logo.png" width="200" alt="Taste Town Logo">
+</p>
+
 
 >A responsive, dynamic React frontend for Taste Town, a fictional food ordering platform. Built with Vite and React, this UI integrates seamlessly with the Flask backend and supports both user and admin experiences.
 
