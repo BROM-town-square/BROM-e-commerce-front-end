@@ -231,11 +231,14 @@ Taste Town is fully responsive — optimized for mobile, tablet, and Laptop scre
 
 ## **Authors**
 
-- [Ricahrd Wasonga](https://github.com/Richard3wasonga)
+- [Richard Wasonga](https://github.com/Richard3wasonga)
 
 - [Brian Njuguna](https://github.com/NJUGUNA-png)
 
 - [Joy Mitchel](https://github.com/JoyMitchel)
+
+- [Nevil Oporo](https://github.com/Neviloporo)
+
 
 
 ## **Contributing**
